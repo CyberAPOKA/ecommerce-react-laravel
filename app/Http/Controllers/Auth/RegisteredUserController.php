@@ -41,7 +41,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        if($request->type == 'buyer') {
+        if ($request->type == 'buyer') {
             $user->update([
                 'cpf' => $request->cpf,
                 'birth_date' => Carbon::parse($request->birth_date)->format('Y-m-d')
